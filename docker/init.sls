@@ -89,4 +89,5 @@ docker-py requirements:
     {%- endif %}
     - require:
       - pkg: docker package
+      - pkg: python-pip
     - reload_modules: True
