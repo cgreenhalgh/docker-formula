@@ -81,6 +81,10 @@ docker-service:
 docker-py requirements:
   pkg.installed:
     - name: python-pip
+  cmd.wait:
+    - name: pip install --upgrade pip && pip install --upgrade virtualenv
+    - watch:
+       - pkg: python-pip
   pip.installed:
     {%- if "pip_version" in docker %}
     - name: docker-py {{ docker.pip_version }}
